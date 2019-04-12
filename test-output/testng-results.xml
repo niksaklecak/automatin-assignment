@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2019-04-12T13:50:47Z" name="Default suite" finished-at="2019-04-12T13:51:19Z" duration-ms="32432">
+    <groups>
+    </groups>
+    <test started-at="2019-04-12T13:50:47Z" name="Default test" finished-at="2019-04-12T13:51:19Z" duration-ms="32432">
+      <class name="timeClockFeature.TestInputNotePositionAndBreak">
+        <test-method is-config="true" signature="setUp(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:timeClockFeature.TestInputNotePositionAndBreak@1e66f1f5]" started-at="2019-04-12T13:50:39Z" name="setUp" finished-at="2019-04-12T13:50:47Z" duration-ms="7410" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://testniksa.humanity.com/]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[127.0.0.1]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setUpClass(java.lang.String, java.lang.String)[pri:0, instance:timeClockFeature.TestInputNotePositionAndBreak@1e66f1f5]" started-at="2019-04-12T13:50:47Z" name="setUpClass" finished-at="2019-04-12T13:50:51Z" duration-ms="4106" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[testniksa3@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[sifra123]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method is-config="true" signature="setUpMethods()[pri:0, instance:timeClockFeature.TestInputNotePositionAndBreak@1e66f1f5]" started-at="2019-04-12T13:50:51Z" name="setUpMethods" finished-at="2019-04-12T13:50:51Z" duration-ms="786" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpMethods -->
+        <test-method signature="testAddNote()[pri:4, instance:timeClockFeature.TestInputNotePositionAndBreak@1e66f1f5]" started-at="2019-04-12T13:50:51Z" name="testAddNote" finished-at="2019-04-12T13:50:56Z" duration-ms="4851" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAddNote -->
+        <test-method is-config="true" signature="closeClockInDialog()[pri:0, instance:timeClockFeature.TestInputNotePositionAndBreak@1e66f1f5]" started-at="2019-04-12T13:50:56Z" name="closeClockInDialog" finished-at="2019-04-12T13:50:58Z" duration-ms="1771" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeClockInDialog -->
+        <test-method is-config="true" signature="setUpMethods()[pri:0, instance:timeClockFeature.TestInputNotePositionAndBreak@1e66f1f5]" started-at="2019-04-12T13:50:58Z" name="setUpMethods" finished-at="2019-04-12T13:50:59Z" duration-ms="1289" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpMethods -->
+        <test-method signature="testSetPosition()[pri:5, instance:timeClockFeature.TestInputNotePositionAndBreak@1e66f1f5]" started-at="2019-04-12T13:50:59Z" name="testSetPosition" finished-at="2019-04-12T13:51:03Z" duration-ms="3426" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSetPosition -->
+        <test-method is-config="true" signature="closeClockInDialog()[pri:0, instance:timeClockFeature.TestInputNotePositionAndBreak@1e66f1f5]" started-at="2019-04-12T13:51:03Z" name="closeClockInDialog" finished-at="2019-04-12T13:51:05Z" duration-ms="1708" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeClockInDialog -->
+        <test-method is-config="true" signature="setUpMethods()[pri:0, instance:timeClockFeature.TestInputNotePositionAndBreak@1e66f1f5]" started-at="2019-04-12T13:51:05Z" name="setUpMethods" finished-at="2019-04-12T13:51:06Z" duration-ms="1751" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpMethods -->
+        <test-method signature="testCancelSettingPosition()[pri:6, instance:timeClockFeature.TestInputNotePositionAndBreak@1e66f1f5]" started-at="2019-04-12T13:51:06Z" name="testCancelSettingPosition" finished-at="2019-04-12T13:51:08Z" duration-ms="2196" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCancelSettingPosition -->
+        <test-method is-config="true" signature="closeClockInDialog()[pri:0, instance:timeClockFeature.TestInputNotePositionAndBreak@1e66f1f5]" started-at="2019-04-12T13:51:08Z" name="closeClockInDialog" finished-at="2019-04-12T13:51:10Z" duration-ms="1722" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeClockInDialog -->
+        <test-method is-config="true" signature="setUpMethods()[pri:0, instance:timeClockFeature.TestInputNotePositionAndBreak@1e66f1f5]" started-at="2019-04-12T13:51:10Z" name="setUpMethods" finished-at="2019-04-12T13:51:11Z" duration-ms="1247" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpMethods -->
+        <test-method signature="testAddBrake()[pri:7, instance:timeClockFeature.TestInputNotePositionAndBreak@1e66f1f5]" started-at="2019-04-12T13:51:11Z" name="testAddBrake" finished-at="2019-04-12T13:51:15Z" duration-ms="3887" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAddBrake -->
+        <test-method is-config="true" signature="closeClockInDialog()[pri:0, instance:timeClockFeature.TestInputNotePositionAndBreak@1e66f1f5]" started-at="2019-04-12T13:51:15Z" name="closeClockInDialog" finished-at="2019-04-12T13:51:17Z" duration-ms="1679" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeClockInDialog -->
+        <test-method is-config="true" signature="cleanUp()[pri:0, instance:timeClockFeature.TestInputNotePositionAndBreak@1e66f1f5]" started-at="2019-04-12T13:51:17Z" name="cleanUp" finished-at="2019-04-12T13:51:19Z" duration-ms="2001" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cleanUp -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:timeClockFeature.TestInputNotePositionAndBreak@1e66f1f5]" started-at="2019-04-12T13:51:19Z" name="teardown" finished-at="2019-04-12T13:51:20Z" duration-ms="916" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- timeClockFeature.TestInputNotePositionAndBreak -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
