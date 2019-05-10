@@ -33,7 +33,7 @@ Wait for projects to update and you are good to go.
 
 
 For tests execution on jenkins maven-surefire-plugin is used. 
-
+Using WebDriverManager for creating driver
 
 Parameters for running a test:
 - env - environment on witch you are running a tests
@@ -41,6 +41,10 @@ Parameters for running a test:
 - browserName - name of a browser
 
 Currently Parameters are used only on Class level. And they are passed as a variable from jenkins Job
+
+## Tests
+
+Project is testing google maps, choosing the longest route from Budapest to Belgrade 
 
 
 ## Built With
