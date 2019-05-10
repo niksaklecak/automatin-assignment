@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="Suite name">
-	<!-- Suite level parameters -->
-	<parameter name="env" value="https://nklecak.humanity.com/app/"/>
-	<parameter name="browserName" value="chrome"/>
-	<parameter name="platform" value="127.0.0.1"/>
+	<parameter name="env" value="https://www.google.com/maps" />
+	<parameter name="browserName" value="Chrome" />
+	<parameter name="platform" value="127.0.0.1" />
 	<test name="Test block name">
-		<parameter name="username" value="+381642547489"/>
-		<parameter name="password" value="LnD9966@i"/>
-		
 		<classes>
-			<class name="loginUser.TestLogin"/>
+      		<class name="googleMapTests.TestSearchBudapestBelgradeMapsDirection"/>
 		</classes>
 	</test>
 </suite>
