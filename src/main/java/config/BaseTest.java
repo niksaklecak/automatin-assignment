@@ -11,7 +11,7 @@ public class BaseTest {
 	protected RemoteWebDriver driver;
 
 	@BeforeSuite
-	@Parameters(value = { "env", "platform", "browser" })
+	@Parameters(value = { "env", "platform", "browserName" })
 	public void setUp(@Optional("https://www.google.com/maps") String env, @Optional("127.0.0.1") String platform,
 			@Optional("Firefox") String browserName) {
 
