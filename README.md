@@ -1,2 +1,2 @@
 # automatin-assignment
-humanity test assignment
+test assignment
