@@ -19,73 +19,74 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public abstract class BasePage {
-	
-	@FindBy (xpath = "//a[@id='sn_schedule']") 
+
+	@FindBy(xpath = "//a[@id='sn_schedule']")
 	protected WebElement scheduleNavigationButton;
-	@FindBy (xpath = "//a[@id='sn_timeclock']") 
+	@FindBy(xpath = "//a[@id='sn_timeclock']")
 	protected WebElement timeClockNavigationButton;
-	@FindBy (xpath = "//a[@id='sn_staff']") 
+	@FindBy(xpath = "//a[@id='sn_staff']")
 	protected WebElement staffNavigationButton;
 
 	protected WebDriver driver;
 	private static final long WAIT_SECONDS = 5;
-	
 
-	public BasePage (WebDriver driver) {	
-		
+	public BasePage(WebDriver driver) {
+
 		this.driver = driver;
-		driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);	
+		driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
 		PageFactory.initElements(driver, this);
 	}
 
 	public abstract String getTitle();
 
-
 	public void fluentClick(By identifer) {
-	
+
 		WebDriverWait wait = new WebDriverWait(driver, WAIT_SECONDS);
 		WebElement elem = wait.until(ExpectedConditions.presenceOfElementLocated(identifer));
 		elem.click();
 	}
 
-	public void fluentClick(WebElement elem) {
+	public void fluentClick(WebElement elem, String desc) {
 
 		WebDriverWait wait = new WebDriverWait(driver, WAIT_SECONDS);
 		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(elem));
 		element.click();
+		System.out.println("Clicked on " + desc);
 	}
-	
-	public void fluentSendKeys(WebElement elem, String keys) {
+
+	public void fluentSendKeys(WebElement elem, String keys, String desc) {
 
 		WebDriverWait wait = new WebDriverWait(driver, WAIT_SECONDS);
 		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(elem));
 		element.clear();
 		element.sendKeys(keys);
+		System.out.println("Text entered to " + desc);
 	}
-	
+
 	public String fluentGetText(WebElement elem) {
 
 		WebDriverWait wait = new WebDriverWait(driver, WAIT_SECONDS);
 		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(elem));
 		return element.getText();
 	}
-	
+
 	public void openFrame(int intLocator) {
 
 		driver.switchTo().defaultContent();
 		WebDriverWait wait = new WebDriverWait(driver, WAIT_SECONDS);
 		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(intLocator));
 	}
-	
+
 	public void openFrame(String frameLocator) {
 
 		driver.switchTo().defaultContent();
 		WebDriverWait wait = new WebDriverWait(driver, WAIT_SECONDS);
-		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.xpath("//iframe[contains(@id,'"+frameLocator+"')]")));
+		wait.until(ExpectedConditions
+				.frameToBeAvailableAndSwitchToIt(By.xpath("//iframe[contains(@id,'" + frameLocator + "')]")));
 	}
-	
+
 	public void closeFrame() {
-		
+
 		driver.switchTo().defaultContent();
 	}
 
@@ -126,7 +127,7 @@ public abstract class BasePage {
 	}
 
 	public String waitAndGetWebElementText(WebElement element) {
-		
+
 		return waitAndGetWebElementText(element, 3);
 	}
 
@@ -140,7 +141,7 @@ public abstract class BasePage {
 	}
 
 	public void refresh() {
-		
+
 		driver.navigate().refresh();
 		wait(5000);
 	}
@@ -154,7 +155,7 @@ public abstract class BasePage {
 	}
 
 	public void typeKeystrokeOn(WebElement elm, Keys key) {
-		
+
 		Actions actions = new Actions(driver);
 		actions.moveToElement(elm);
 		actions.sendKeys(key);
@@ -162,14 +163,14 @@ public abstract class BasePage {
 	}
 
 	public void moveToElement(WebElement elm) {
-		
+
 		Actions actions = new Actions(driver);
 		actions.moveToElement(elm);
 		actions.build().perform();
 	}
 
 	public void resizeWindow() {
-		
+
 		JavascriptExecutor executor = (JavascriptExecutor) driver;
 		executor.executeScript("document.body.style.zoom = '80%'");
 	}
@@ -195,9 +196,9 @@ public abstract class BasePage {
 			System.out.println(iframe.getAttribute("id"));
 		}
 	}
-	
+
 	public void selectListElement(String cssSelector, int iterator) {
-		
+
 		WebDriverWait wait = new WebDriverWait(driver, WAIT_SECONDS);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(cssSelector)));
 		List<WebElement> rdBtn = driver.findElements(By.cssSelector(cssSelector));
@@ -212,11 +213,33 @@ public abstract class BasePage {
 			i++;
 		}
 	}
-	
+
 	public void selectOptionByIndex(WebElement elem, int index) {
 		Select select = new Select(elem);
-		select.selectByIndex(index-1);
+		select.selectByIndex(index - 1);
 	}
 
+	public boolean waitAndCheckElementPresent(WebElement elem, String desc) {
+
+		for (int i = 0; i < WAIT_SECONDS; i++) {
+			wait(1000);
+			try {
+				if (isElementPresent(elem, desc))
+					break;
+			} catch (Exception e) {
+				System.out.println("Element stil not present");
+			}
+		}
+		return elem.isDisplayed();
+	}
+
+	public boolean isElementPresent(WebElement elem, String desc) {
+		if (elem.isDisplayed()) {
+			System.out.println("Element " + desc + " is present ");
+			return true;
+		} else {
+			return false;
+		}
+	}
 
 }

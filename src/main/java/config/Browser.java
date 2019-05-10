@@ -15,17 +15,20 @@ public enum Browser {
 		@Override
 		public RemoteWebDriver getDriver() {
 			WebDriverManager.chromedriver().setup();
-			
+
 			ChromeOptions options = new ChromeOptions();
-			RemoteWebDriver driver = new ChromeDriver(options);  
+			options.addArguments("--lang=en-GB");
+			RemoteWebDriver driver = new ChromeDriver(options);
 			return driver;
 		}
 	},
 	FIREFOX {
 		@Override
-		public RemoteWebDriver getDriver () {
+		public RemoteWebDriver getDriver() {
 			WebDriverManager.firefoxdriver().setup();
-			FirefoxOptions options = new FirefoxOptions().setProfile(new FirefoxProfile());
+			FirefoxProfile profile = new FirefoxProfile();
+			profile.setPreference("intl.accept_languages", "en-GB");
+			FirefoxOptions options = new FirefoxOptions().setProfile(profile);
 			RemoteWebDriver driver = new FirefoxDriver(options);
 			return driver;
 		}
